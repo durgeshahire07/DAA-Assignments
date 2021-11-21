@@ -1,6 +1,8 @@
 #include <iostream>
+#include <chrono>
 #include <bits/stdc++.h>
 using namespace std;
+using namespace std::chrono;
 typedef struct {
    int v;
    int w;
@@ -61,8 +63,21 @@ int main() {
    display(items,4);
    cout<< "Enter Knapsack weight \n";
    cin >> W;
+   
+   // Get starting timepoint
+   auto start = high_resolution_clock::now();
+   
    float mxVal = knapsack(items, 4, W);
+   
+   // Get ending timepoint
+   auto stop = high_resolution_clock::now();
+   
+   auto duration = duration_cast<microseconds>(stop - start);
+
    cout << "Max value for "<< W <<" weight is "<< mxVal;
+
+   cout << "\nTime taken by function: "
+         << duration.count() << " microseconds" << endl;
 }
 
 /* Algo
