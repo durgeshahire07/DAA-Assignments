@@ -58,17 +58,17 @@ float knapsack(Item items[], int sizeOfItems, int W) {
 }
 int main() {
    int W;
-   Item items[4];
-   input(items, 4);
+   Item items[5];
+   input(items, 5);
    cout << "Entered data \n";
-   display(items,4);
+   display(items,5);
    cout<< "Enter Knapsack weight \n";
    cin >> W;
    
    // Get starting timepoint
    auto start = high_resolution_clock::now();
    
-   float mxVal = knapsack(items, 4, W);
+   float mxVal = knapsack(items, 5, W);
    
    // Get ending timepoint
    auto stop = high_resolution_clock::now();

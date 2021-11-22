@@ -34,7 +34,7 @@ void QuickSort(int array[], int low, int high)
     if (low<high)
     {
         int pi=Partition(array,low,high);
-        Partition(array,low,pi-1);
+        QuickSort(array,low,pi-1);
         QuickSort(array,pi+1,high);
     }
 }
@@ -51,7 +51,7 @@ int main()
     
     auto start = high_resolution_clock::now();
     cout<<"Array :\n";
-    for(int i=0;i<6;i++)
+    for(int i=0;i<size;i++)
         cout<<array[i]<<"  ";
     int n = sizeof(array) / sizeof(array[0]);
    

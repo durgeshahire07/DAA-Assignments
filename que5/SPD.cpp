@@ -71,39 +71,15 @@ void floydWarshall(int adjMatrix[][N])
 
 int main()
 {
-    int i,j;
     
-    int adjMatrix[4][4];
-    cout<<"Enter 16 values of initial 4x4 matrix: ";
-    
-    for(i=0;i<N;i++)
-    {
-        for(j=0;j<N;j++)
-        {
-            if(i=j)
-            {
-                adjMatrix[i][j]=0;
-                cout<<i<<"x"<<j<<" value: 0";
-            }
             
-            else
-            {
-                cout<<"Enter "<<i<<"x"<<j<<" value: ";
-                cin>>adjMatrix[i][j];
-                
-                if(adjMatrix[i][j]==0)
-                    adjMatrix[i][j]=M;
-            }
-        }
-    }
-            
-    /*int adjMatrix[N][N] =
+    int adjMatrix[N][N] =
     {
-        { 0, M, -2, M },
+        { 9, M, 1, M },
         { 4, 0, 3, M },
-        { M, M, 0, 2 },
-        { M, -1, M, 0 }
-    };*/
+        { M, 6, M, 2 },
+        { 4, 21, M, 0 }
+    };
     auto start = high_resolution_clock::now();
     floydWarshall(adjMatrix);
     auto stop = high_resolution_clock::now();
