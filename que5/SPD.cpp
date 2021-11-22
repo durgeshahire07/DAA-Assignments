@@ -3,7 +3,9 @@
 #include <iostream>
 #include <climits>
 #include <iomanip>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 #define N 4
 #define M INT_MAX
 void printPath(int path[][N], int v, int u)
@@ -102,7 +104,13 @@ int main()
         { M, M, 0, 2 },
         { M, -1, M, 0 }
     };*/
+    auto start = high_resolution_clock::now();
     floydWarshall(adjMatrix);
+    auto stop = high_resolution_clock::now();
+   
+   auto duration = duration_cast<microseconds>(stop - start);
+    cout << "\nTime taken by function: "
+         << duration.count()<< " microseconds" << endl;
 
     return 0;
 }

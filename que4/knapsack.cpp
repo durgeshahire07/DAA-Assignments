@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <math.h>
 #include <bits/stdc++.h>
 using namespace std;
 using namespace std::chrono;
@@ -77,7 +78,7 @@ int main() {
    cout << "Max value for "<< W <<" weight is "<< mxVal;
 
    cout << "\nTime taken by function: "
-         << duration.count() << " microseconds" << endl;
+         << duration.count()<< " microseconds" << endl;
 }
 
 /* Algo
