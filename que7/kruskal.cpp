@@ -117,6 +117,7 @@ int main()
     }
 
     g.kruskal();
+
     g.print();
     
     return 0;
