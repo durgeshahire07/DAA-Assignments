@@ -4,8 +4,9 @@ Prim’s Algorithm.*/
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <chrono>
 using namespace std;
-
+using namespace std::chrono;
 #define edge pair<int,int>
 
 class Graph 
@@ -87,6 +88,7 @@ void Graph::print()
 
 int main() 
 {
+   
     int nedges, nvertex, initialv, edgew, i, j, adjmat[10][10];
     
     cout<<"Enter the number of edges in the Graph : ";
@@ -104,7 +106,7 @@ int main()
             cin>>adjmat[i][j];
         }
     }
-    
+     
     for(i=1;i<=nvertex;i++)
     {
         for(j=1;j<=nvertex;j++)
@@ -115,10 +117,13 @@ int main()
             }
         }
     }
-
+    auto start = high_resolution_clock::now();
     g.kruskal();
-
     g.print();
-    
+
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "\nTime taken by function: "
+         << duration.count() << "microsecond" << endl;
     return 0;
 }
